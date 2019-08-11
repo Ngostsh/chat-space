@@ -29,7 +29,7 @@ Things you may want to cover:
 |------|----|-------|
 |email|string|null: false, add_index :users, :email, unique: true|
 |password|string|null: false|
-|username|string|null: false, add_index :users, :username|
+|name|string|null: false, add_index :users, :username|
 ### Association
 - has_many :messages
 - has_many :users_groups
@@ -38,7 +38,7 @@ Things you may want to cover:
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupname|string|null: false|
+|name|string|null: false|
 ### Association
 - has_many :messages
 - has_many :users_groups
