@@ -1,0 +1,10 @@
+.header{
+  height: 24px;
+  width: 100%;
+  background-color: $blue;
+  &__text{
+    color: $white;
+    text-align: center;
+    line-height: 25px;
+  }
+}
