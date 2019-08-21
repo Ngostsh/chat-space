@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190821103416) do
+ActiveRecord::Schema.define(version: 20190821114227) do
 
   create_table "group_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "group_id"
-    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "group_id"
+    t.integer  "user_id"
     t.index ["group_id"], name: "index_group_users_on_group_id", using: :btree
     t.index ["user_id"], name: "index_group_users_on_user_id", using: :btree
   end
@@ -36,8 +36,12 @@ ActiveRecord::Schema.define(version: 20190821103416) do
     t.datetime "remember_created_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "name",                                null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["name"], name: "index_users_on_name", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "group_users", "groups"
+  add_foreign_key "group_users", "users"
 end
