@@ -36,16 +36,18 @@
     background-color: $dark-blue;
     padding: 20px 20px 0;
     box-sizing: border-box;
-    color: $white2;
-    font-weight: bold;
+
     .group{
-      margin-bottom: 40px;
-      &__group-name{
+      box-sizing: border-box;
+      .group__name{
         font-size: 15px;
-        margin-bottom: 5px;
+        color: $white2;
+        padding-bottom: 5px;
       }
-      &__latest-message{
+      .group__message{
         font-size: 11px;
+        margin-bottom: 40px;
+        color: $white2;
 
       }
     }
