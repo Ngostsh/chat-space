@@ -39,16 +39,20 @@
 
     .group{
       box-sizing: border-box;
-      .group__name{
-        font-size: 15px;
-        color: $white2;
-        padding-bottom: 5px;
-      }
-      .group__message{
-        font-size: 11px;
-        margin-bottom: 40px;
-        color: $white2;
-
+      &__link{
+        text-decoration: none;
+          .group__name{
+            font-size: 15px;
+            color: $white2;
+            padding-bottom: 5px;
+            text-decoration: none;
+          }
+          .group__message{
+            font-size: 11px;
+            margin-bottom: 40px;
+            color: $white2;
+            text-decoration: none;
+        }
       }
     }
   }
