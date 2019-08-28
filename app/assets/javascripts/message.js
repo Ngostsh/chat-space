@@ -15,8 +15,8 @@ $(function(){
           <div class="lower-message">
             <p class="lower-message__content">
               ${message.content}
-              <img src=${message.image} />
             </p>
+              <img src=${message.image} />
           </div>
         </div>`
       return html;
@@ -62,7 +62,7 @@ $(function(){
       $('.form__submit').attr('disabled', false);
     })
     .fail(function(){
-      alert('error');
+      alert('メッセージを入力して下さい');
       $('.form__submit').attr('disabled', false);
     })
   })
@@ -82,7 +82,9 @@ $(function(){
           insertHTML = buildHTML(message);
           $('.messages').append(insertHTML);
         })
-        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+        if (messages.length != 0){
+          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+        };
       })
       .fail(function() {
         alert('自動更新に失敗しました');
