@@ -19,6 +19,11 @@ $(function() {
   </div>`
       selected_list.append(html);
   }
+
+  function appendErrMsgToHTML(msg) {
+    var html = `<div class='chat-group-user clearfix'>${ msg }</div>`
+    search_list.append(html);
+  }
   
     $("#user-search-field").on("keyup", function() {
       var input = $("#user-search-field").val();
@@ -37,7 +42,7 @@ $(function() {
           });
         }
         else {
-          $("#user-search-result").empty();
+          appendErrMsgToHTML("一致するユーザーが見つかりません");
         }
       })
       .fail(function() {
